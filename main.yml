@@ -1,8 +1,46 @@
 - hosts: localhost
+
   vars:
     homebrew_installed_packages:
       - pv
       - neovim
       - tmux
+      - neofetch
+      - tree
+      - romkatv/powerlevel10k/powerlevel10k
+      - bpytop
+      - fzf
+
+    homebrew_uninstalled_packages: []
+
+
+    homebrew_cask_apps:
+      - firefox
+      - google-chrome
+      - alfred
+      - discord
+      - reaper
+      - visual-studio-code
+      - kitty
+      - amethyst
+      - google-drive
+      - nextcloud
+      - notion
+      - signal
+
+    dockitems_remove:
+      - Launchpad
+      - TV
+      - 'App Store'
+      - News
+      - Contacts
+      - Maps
+      - 'System Preferences'
+      - Music
+      - Terminal
+      - Safari
+
   roles:
     - geerlingguy.mac.homebrew
+    - geerlingguy.mac.dock
+    - vim-plug
