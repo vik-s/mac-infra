@@ -1,0 +1,20 @@
+- name: Clone github dotfiles repo
+  ansible.builtin.git:
+    repo: https://github.com/vik-s/dotfiles.git
+    dest: ~/git/dotfiles
+
+- name: Create symbolic links
+  ansible.builtin.file:
+    src: "~/git/dotfiles/{{ item }}"
+    dest: "~/{{ item }}"
+    owner: vik
+    group: staff
+    state: link
+    force: yes
+  loop: 
+    - .config
+    - .p10k.zsh
+    - .vscode
+    - .zprofile
+    - .zshrc
+    

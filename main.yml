@@ -44,3 +44,4 @@
     - geerlingguy.mac.homebrew
     - geerlingguy.mac.dock
     - vim-plug
+    - dotfiles
