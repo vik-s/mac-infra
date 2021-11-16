@@ -1,0 +1,10 @@
+---
+
+# set to true when you want to configure dotfiles
+configure_dotfiles: false
+
+# set to true when you want to configure the dock
+# run this only after all manual installations are done
+# otherwise, dockutil will fail when app is not found
+
+configure_dock: true

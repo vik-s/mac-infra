@@ -1,5 +1,8 @@
 - hosts: localhost
 
+  vars_files:
+    - default.config.yml
+
   vars:
     homebrew_installed_packages:
       - pv
@@ -10,6 +13,8 @@
       - romkatv/powerlevel10k/powerlevel10k
       - bpytop
       - fzf
+      - ripgrep
+
 
     homebrew_uninstalled_packages: []
 
@@ -28,6 +33,8 @@
       - notion
       - signal
 
+    homebrew_cask_uninstalled_apps: []
+
     dockitems_remove:
       - Launchpad
       - TV
@@ -39,9 +46,29 @@
       - Music
       - Terminal
       - Safari
+      - Photos
+      - Calendar
+      - Reminders
+
+    dockitems_persist:
+      - name: Reaper
+        path: "/Applications/REAPER-ARM.app"
+      - name: Kitty
+        path: "/Applications/Kitty.app"
+      - name: Discord
+        path: "/Applications/Discord.app"
+      - name: Firefox
+        path: "/Applications/Firefox.app"
+      - name: Notion
+        path: "/Applications/Notion.app"
 
   roles:
-    - geerlingguy.mac.homebrew
-    - geerlingguy.mac.dock
-    - vim-plug
-    - dotfiles
+    - role: geerlingguy.mac.homebrew
+
+    - role: geerlingguy.mac.dock
+      when: configure_dock
+
+    - role: vim-plug
+
+    - role: dotfiles
+      when: configure_dotfiles
