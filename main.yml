@@ -14,7 +14,7 @@
       - bpytop
       - fzf
       - ripgrep
-
+      - weechat
 
     homebrew_uninstalled_packages: []
 
@@ -32,6 +32,7 @@
       - nextcloud
       - notion
       - signal
+      - the-unarchiver
 
     homebrew_cask_uninstalled_apps: []
 
